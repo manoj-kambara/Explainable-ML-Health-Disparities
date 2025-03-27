@@ -66,6 +66,7 @@ library(caret)
 
 # Predict on the test set
 predictions <- predict(t2d_model, test_df %>% select(-c(id,race,Status)))
+
 # Confusion matrix
 confMatrix <- confusionMatrix(predictions, as.factor(test_df$Status),positive="1")
 print(confMatrix)
